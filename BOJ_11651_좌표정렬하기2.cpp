@@ -1,3 +1,6 @@
+//https://www.acmicpc.net/problem/11651
+//좌표정렬하기2 백준
+
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -36,12 +39,20 @@ int main()
 		cout << i.first << " " << i.second << "\n"; //출력시 endln은 사용하지 않아야 함 (timeout) 
 	}
 #else
+
+#if 0
 	//iterator 사용 
 	vector<pair<int, int> >::iterator iter;
 	for(iter=v.begin(); iter!=v.end(); iter++)
 	{
 		cout << iter->first << " " << iter->second << "\n";
 	}
+#endif
+
+	//걍 vector[i]로 접근하여 사용 
+	for(int i=0; i<v.size(); ++i)
+	    cout<< v[i].first << " " << v[i].second << "\n";
+
 #endif
 
 	return 0;
