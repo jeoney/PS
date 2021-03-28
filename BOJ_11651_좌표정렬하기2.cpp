@@ -1,6 +1,3 @@
-//https://www.acmicpc.net/problem/11651
-//좌표 정렬하기 2
-
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -32,11 +29,20 @@ int main()
 	
 	sort( v.begin(), v.end(), compare );
 
+#if 0
 	//vector의 range loop
 	for(auto i : v)
 	{
 		cout << i.first << " " << i.second << "\n"; //출력시 endln은 사용하지 않아야 함 (timeout) 
 	}
-	
+#else
+	//iterator 사용 
+	vector<pair<int, int> >::iterator iter;
+	for(iter=v.begin(); iter!=v.end(); iter++)
+	{
+		cout << iter->first << " " << iter->second << "\n";
+	}
+#endif
+
 	return 0;
 }
